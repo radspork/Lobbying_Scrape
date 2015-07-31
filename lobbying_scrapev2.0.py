@@ -42,7 +42,7 @@ with open(CompleteName, 'a') as f:
 		print tree
 		root = tree.getroot()
 		for element in root:
-#			print element.tag, '|', element.attrib
+	#		print element.tag, '|', element.attrib
 	#		for all_tags in element.findall('.//'):
 	#			print all_tags.tag, '|', all_tags.attrib
 			all_tags = element.findall('.//')
