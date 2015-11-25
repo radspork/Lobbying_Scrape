@@ -19,7 +19,13 @@ class scrapper(object):
 		year = input('Enter the year to be parsed: ')
 		print year
 		#Directory where downloaded senate data is stored <-------------------------- alter if needed
-		path = "/Users/Ryan/Desktop/Research/Raw senate data/"
+		Ryan = raw_input("Ryan? (y/n) ")
+		if str(Ryan) == "y":
+			path = "/Users/Ryan/Desktop/Research/Raw senate data/"
+		else:
+			path = raw_input('Path of Downloaded Senate Data: ')
+			str(path)
+		print "Path: %s" %(path)
 		#Start time stamp
 		start = datetime.datetime.now()
 		#Finding all called files in directory
