@@ -14,13 +14,13 @@ import datetime
 class scrapper(object):
 	def __init__(self):
 		self.filelist = []
+		self.ryan = ""
 	def input(self):
 		#Ask for overall path and year
 		year = input('Enter the year to be parsed: ')
-		print year
-		#Directory where downloaded senate data is stored <-------------------------- alter if needed
-		Ryan = raw_input("Ryan? (y/n) ")
-		if str(Ryan) == "y":
+		print "year: %s" %(year)
+		self.ryan = raw_input("Ryan? (y/n) ")
+		if str(self.ryan) == "y":
 			path = "/Users/Ryan/Desktop/Research/Raw senate data/"
 		else:
 			path = raw_input('Path of Downloaded Senate Data: ')
@@ -40,8 +40,10 @@ class scrapper(object):
 		#Start Time Stamp
 		start = datetime.datetime.now()
 		#Set writing path
-		#Directory where the the csv's are to be saved <-------------------------- alter if needed
-		DumpDir = "/Users/Ryan/Desktop/Research/DO_IT_ALL/"
+		if str(self.ryan) == "y":
+			DumpDir = "/Users/Ryan/Desktop/Research/DO_IT_ALL/"
+		else:
+			DumpDir = str(raw_input("Output directory:"))
 		CompleteName = str(str(DumpDir) + str(year) + ".csv")
 		#Open writer
 		with open(CompleteName, 'a') as f:
