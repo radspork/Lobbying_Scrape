@@ -99,58 +99,35 @@ class scrapper(object):
 							CLIENT_ID = tags.attrib['ClientID'].encode('utf-8').strip()
 							CLIENT_NAME = tags.attrib['ClientName'].encode('utf-8').strip()
 							SELF_FILER = tags.attrib['SelfFiler'].encode('utf-8').strip()
+
 					#Lobbyist names
-					LOBBYIST_NAME_1 = 0
-					LOBBYIST_NAME_2 = 0
-					LOBBYIST_NAME_3 = 0
-					LOBBYIST_NAME_4 = 0
-					LOBBYIST_NAME_5 = 0
-					LOBBYIST_NAME_6 = 0
-					LOBBYIST_NAME_7 = 0
-					LOBBYIST_NAME_8 = 0
-					LOBBYIST_NAME_9 = 0
-					LOBBYIST_NAME_10 = 0
-					for x in range(len(LOBBYIST_NAME)):
-						LOBBYIST_NAME_[x] = LOBBYIST_NAME[[x]]
+					LOBBYIST={}
+					for x in range(1,10):
+						LOBBYIST["_NAME_{0}".format(x)] = 0
+					for x in range(len(LOBBYIST)):
+						LOBBYIST["_NAME_{0}".format(x)] = LOBBYIST[[x]]
+					
 					#Issue Codes
-					CODE_1 = 0
-					CODE_2 = 0
-					CODE_3 = 0
-					CODE_4 = 0
-					CODE_5 = 0
-					CODE_6 = 0
-					CODE_7 = 0
-					CODE_8 = 0
-					CODE_9 = 0
-					CODE_10 = 0
+					CODE={}
+					for x in range(1,10):
+						CODE["_{0}".format(x)] = 0
 					for x in range(len(CODE)):
-						CODE_[x] = CODE[x]
+						CODE["_{0}".format(x)] = CODE[[x]]
+					
 					#Specific Issues
-					SPECIFIC_ISSUE_1 = 0
-					SPECIFIC_ISSUE_2 = 0
-					SPECIFIC_ISSUE_3 = 0
-					SPECIFIC_ISSUE_4 = 0
-					SPECIFIC_ISSUE_5 = 0
-					SPECIFIC_ISSUE_6 = 0
-					SPECIFIC_ISSUE_7 = 0
-					SPECIFIC_ISSUE_8 = 0
-					SPECIFIC_ISSUE_9 = 0
-					SPECIFIC_ISSUE_10 = 0
+					SPECIFIC={}
+					for x in range(1,10):
+						SPECIFIC["_ISSUE_{0}".format(x)] = 0
 					for x in range(len(SPECIFIC_ISSUE)):
-						SPECIFIC_ISSUE_[x] = SPECIFIC_ISSUE[[x]]
+						SPECIFIC["_ISSUE_{0}".format(x)] = SPECIFIC[[x]]
+					
 					#Gov entity names
-					GOV_ENTITY_NAME_1 = 0
-					GOV_ENTITY_NAME_2 = 0
-					GOV_ENTITY_NAME_3 = 0
-					GOV_ENTITY_NAME_4 = 0
-					GOV_ENTITY_NAME_5 = 0
-					GOV_ENTITY_NAME_6 = 0
-					GOV_ENTITY_NAME_7 = 0
-					GOV_ENTITY_NAME_8 = 0
-					GOV_ENTITY_NAME_9 = 0
-					GOV_ENTITY_NAME_10 = 0
-					for x in range(len(SPECIFIC_ISSUE)):
-						GOV_ENTITY_NAME_[x] = GOV_ENTITY_NAME[[x]]
+					GOV_ENTITY={}
+					for x in range(1, 10):
+						GOV_ENTITY["_NAME_{)}".format(x)] = 0
+					for x in range(len(GOV_ENTITY)):
+						GOV_ENTITY["_NAME_{0}".format(x)] = GOV_ENTITY[[0]]
+
 					##Writer
 					#Write each entry to CSV
 					row_write = [FILING_ID, YEAR, TYPE, AMOUNT, REG_NAME, REG_ID, CONTACT_NAME, CLIENT_ID, CLIENT_NAME, SELF_FILER, LOBBYIST_NAME_1, LOBBYIST_NAME_2, LOBBYIST_NAME_3, LOBBYIST_NAME_4, LOBBYIST_NAME_5, LOBBYIST_NAME_6, LOBBYIST_NAME_7, LOBBYIST_NAME_8, LOBBYIST_NAME_9, LOBBYIST_NAME_10, CODE_1, CODE_2, CODE_3, CODE_4, CODE_5, CODE_6, CODE_7, CODE_8, CODE_9, CODE_10, GOV_ENTITY_NAME_1, GOV_ENTITY_NAME_2, GOV_ENTITY_NAME_3, GOV_ENTITY_NAME_4, GOV_ENTITY_NAME_5, GOV_ENTITY_NAME_6, GOV_ENTITY_NAME_7, GOV_ENTITY_NAME_8, GOV_ENTITY_NAME_9, GOV_ENTITY_NAME_10]
